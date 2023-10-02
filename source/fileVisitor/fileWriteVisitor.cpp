@@ -1,11 +1,11 @@
-#include "fileWriteVisitor.h"
+#include "../../header/fileVisitor/FileWriteVisitor.h"
 
-fileWriteVisitor::fileWriteVisitor(std::string fileName)
+FileWriteVisitor::FileWriteVisitor(std::string fileName)
 {
 	this->fileStream.open(fileName);
 	//closing in the drive code
 }
-void fileWriteVisitor::writePacket(ethPacket* ethpacket, int packetNumber)
+void FileWriteVisitor::writePacket(EthernetPacket* ethpacket, int packetNumber)
 {
 	fileStream << "packet # " << std::to_string(packetNumber) << ":\n";
 	fileStream << ethpacket->getPacketLine() << "\n";
@@ -16,7 +16,19 @@ void fileWriteVisitor::writePacket(ethPacket* ethpacket, int packetNumber)
 	fileStream << std::string(150, '*') << "\n";
 }
 
-void fileWriteVisitor::writePacket(ecpriPacket* ecpripacket, int packetNumber)
+void FileWriteVisitor::writePacket(ecpriPacket* ecpripacket, int packetNumber)
 {
-	// to do after finshing ethpacket
+	fileStream << "packet # " << std::to_string(packetNumber) << ":\n";
+	fileStream << ecpripacket->getPacketLine() << "\n";
+	fileStream << "CRC: " << ecpripacket->getCrc() << "\n";
+	fileStream << "Concatenation Indicator: " << ecpripacket->getConcatenationIndicator() << "\n";
+	fileStream << "Destination Address: " << ecpripacket->getDstAddr() << "\n";
+	fileStream << "Message Type: " << ecpripacket->getMsgType() << "\n";
+	fileStream << "Payload Size: " << ecpripacket->getPayloadSize() << "\n";
+	fileStream << "Protocol Version: " << ecpripacket->getProtocolVer() << "\n";
+	fileStream << "RTC ID: " << ecpripacket->getRtcId() << "\n";
+	fileStream << "Sequence ID: " << ecpripacket->getSeqId() << "\n";
+	fileStream << "Source Address: " << ecpripacket->getSrcAddr() << "\n";
+	fileStream << "Type: " << ecpripacket->getType() << "\n";
+	fileStream << std::string(150, '*') << "\n";
 }

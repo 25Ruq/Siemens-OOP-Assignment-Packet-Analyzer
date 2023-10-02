@@ -25,6 +25,11 @@ void ecpriPacket::setMsgType(const std::string &msgType)
     this->msgType = msgType;
 }
 
+void ecpriPacket::setConcatenationIndicator(std::string concatenationIndicator)
+{
+    this->concatenationIndicator = concatenationIndicator;
+}
+
 std::string ecpriPacket::getProtocolVer() const
 {
     return protocolVer;
@@ -48,4 +53,14 @@ std::string ecpriPacket::getPayloadSize() const
 std::string ecpriPacket::getMsgType() const
 {
     return msgType;
+}
+
+std::string ecpriPacket::getConcatenationIndicator() const
+{
+    return concatenationIndicator;
+}
+
+void ecpriPacket::accept(Visitor* fileWriteVisitor, int packetNumber)
+{
+    fileWriteVisitor->writePacket(this, packetNumber);
 }

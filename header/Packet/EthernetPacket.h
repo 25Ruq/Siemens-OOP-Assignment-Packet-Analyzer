@@ -1,7 +1,8 @@
-#include "Packet.h"
+#pragma once
+#include "../../header/Packet/Packet.h"
 
 class EthernetPacket : public Packet
 {
 public:
-    // virtual void accept(fileWriteVisitor & v) override{ v.writePacket(*this);}
+    void accept(Visitor* fileWriteVisitor, int packetNumber);
 };

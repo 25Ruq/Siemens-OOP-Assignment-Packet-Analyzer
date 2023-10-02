@@ -1,15 +1,15 @@
 #pragma once
-#include"visitor.h"
-#include "ethPacket.h"
-#include "ecpriPacket.h"
+#include "../../header/fileVisitor/Visitor.h"
+#include "../../header/Packet/EthernetPacket.h"
+#include "../../header/Packet/ecpriPacket.h"
 #include <string> 
 #include <iostream>
 
-class fileWriteVisitor : public visitor
+class FileWriteVisitor : public Visitor
 {
 public:
-	fileWriteVisitor(std::string fileName);
-	void writePacket(ethPacket* ethpacket, int packetNumber);
+	FileWriteVisitor(std::string fileName);
+	void writePacket(EthernetPacket* ethpacket, int packetNumber);
 	void writePacket(ecpriPacket* ecpriPacket, int packetNumber);
 };
 

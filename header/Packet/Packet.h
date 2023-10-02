@@ -1,4 +1,6 @@
+#pragma once
 #include <string>
+#include "../../header/fileVisitor/Visitor.h"
 
 class Packet
 {
@@ -10,8 +12,6 @@ private:
     std::string type;
 
 public:
-    // virtual void accept(fileWriteVisitor& v) = 0;
-
     void setPacketLine(const std::string &packetLine);
     void setSrcAddr(const std::string &srcAddr);
     void setDstAddr(const std::string &dstAddr);
@@ -22,4 +22,5 @@ public:
     std::string getDstAddr() const;
     std::string getType() const;
     std::string getCrc() const;
+    virtual void accept(Visitor* fileWriteVisitor, int packetNumber) = 0;
 };
