@@ -12,6 +12,7 @@ private:
     std::string srcAddr;
     std::string crc;
     std::string type;
+    std::string rawPacket;
 
 public:
     void setPacketLine(std::string packetLine);
@@ -19,6 +20,7 @@ public:
     void setDstAddr(std::string dstAddr);
     void setType(std::string type);
     void setCrc(std::string crc);
+    void setRawPacket(std::string rawPacket);
     std::string getPacketLine();
     std::string getSrcAddr();
     std::string getDstAddr();
