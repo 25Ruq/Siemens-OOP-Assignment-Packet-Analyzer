@@ -3,6 +3,7 @@
 
 #include <string>
 #include "../Packet/Packet.h"
+#include "../constants/PacketFields.h"
 class Parser
 {
 protected:

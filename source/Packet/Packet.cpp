@@ -1,9 +1,5 @@
 #include "../../header/Packet/Packet.h"
 
-void Packet::setPacketLine(std::string packetLine)
-{
-    this->packetLine = packetLine;
-}
 
 void Packet::setSrcAddr(std::string srcAddr)
 {
@@ -29,10 +25,6 @@ void Packet::setRawPacket(std::string rawPacket)
     this->rawPacket = rawPacket;
 }
 
-std::string Packet::getPacketLine()
-{
-    return packetLine;
-}
 
 std::string Packet::getSrcAddr()
 {
@@ -52,4 +44,9 @@ std::string Packet::getType()
 std::string Packet::getCrc()
 {
     return crc;
+}
+
+std::string Packet::getRawPacket()
+{
+    return rawPacket;
 }

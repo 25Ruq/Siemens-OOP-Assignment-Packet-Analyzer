@@ -2,33 +2,27 @@
 
 std::string EcpriParser::getConcatenationIndicator()
 {
-    // Todo: implement
-    return "";
+    return this->rawPacket.substr(PacketFields::CONCATENATION_INDICATOR_START, PacketFields::CONCATENATION_INDICATOR_SIZE);
 }
 std::string EcpriParser::getMessageType()
 {
-    // Todo: implement
-    return "";
+    return this->rawPacket.substr(PacketFields::MSG_TYPE_START, PacketFields::MSG_TYPE_SIZE);
 }
 std::string EcpriParser::getPayloadSize()
 {
-    // Todo: implement
-    return "";
+    return this->rawPacket.substr(PacketFields::PAYLOAD_START, PacketFields::PAYLOAD_SIZE);
 }
 std::string EcpriParser::getProtocolVersion()
 {
-    // Todo: implement
-    return "";
+    return this->rawPacket.substr(PacketFields::PROTOCOL_VER_START, PacketFields::PROTOCOL_VER_SIZE);
 }
 std::string EcpriParser::getSequenceId()
 {
-    // Todo: implement
-    return "";
+    return this->rawPacket.substr(PacketFields::SEQ_ID_START, PacketFields::SEQ_ID_SIZE);
 }
 std::string EcpriParser::getRtcId()
 {
-    // Todo: implement
-    return "";
+    return this->rawPacket.substr(PacketFields::RTC_ID_START, PacketFields::RTC_ID_SIZE);
 }
 ecpriPacket *EcpriParser::getParsedPacket()
 {

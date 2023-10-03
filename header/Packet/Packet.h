@@ -7,7 +7,6 @@
 class Packet
 {
 private:
-    std::string packetLine;
     std::string dstAddr;
     std::string srcAddr;
     std::string crc;
@@ -15,17 +14,16 @@ private:
     std::string rawPacket;
 
 public:
-    void setPacketLine(std::string packetLine);
     void setSrcAddr(std::string srcAddr);
     void setDstAddr(std::string dstAddr);
     void setType(std::string type);
     void setCrc(std::string crc);
     void setRawPacket(std::string rawPacket);
-    std::string getPacketLine();
     std::string getSrcAddr();
     std::string getDstAddr();
     std::string getType();
     std::string getCrc();
+    std::string getRawPacket();
     virtual void accept(Visitor *fileWriteVisitor, int packetNumber) = 0;
 };
 #endif

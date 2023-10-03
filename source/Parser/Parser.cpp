@@ -2,30 +2,26 @@
 
 std::string Parser::getDestinationAddress()
 {
-    //Todo: implement
-    return "";
+    return this->rawPacket.substr(PacketFields::DST_ADDR_START, PacketFields::DST_ADDR_SIZE);
 }
 std::string Parser::getSourceAddress()
 {
-    //Todo: implement
-    return "";
+    return this->rawPacket.substr(PacketFields::SRC_ADDR_START, PacketFields::SRC_ADDR_SIZE);
 }
 std::string Parser::getCRC()
 {
-    //Todo: implement
-    return "";
+    int startIndex=this->rawPacket.size() - PacketFields::CRC_SIZE;
+    return this->rawPacket.substr(startIndex);;
 }
 std::string Parser::getType()
 {
-    //Todo: implement
-    return "";
+    return this->rawPacket.substr(PacketFields::TYPE_START, PacketFields::TYPE_SIZE);
 }
 void Parser::setRawPacket(std::string rawPacket)
 {
-    //Todo: implement
+    this->rawPacket = rawPacket;
 }
 std::string Parser::getType(std::string rawPacket)
 {
-    //Todo: implement
-    return "";
+    return rawPacket.substr(PacketFields::TYPE_START, PacketFields::TYPE_SIZE);
 }
