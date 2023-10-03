@@ -1,5 +1,8 @@
+#ifndef ECPRI_PARSER_H
+#define ECPRI_PARSER_H
 
 #include "Parser.h"
+#include "../Packet/ecpriPacket.h"
 #include <string>
 
 class EcpriParser : public Parser
@@ -13,5 +16,6 @@ private:
     std::string getRtcId();
 
 public:
-    // eCRPIFrame *getParsedFrame() override;
+    ecpriPacket *getParsedPacket() override;
 };
+#endif

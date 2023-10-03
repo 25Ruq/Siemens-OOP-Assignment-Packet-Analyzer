@@ -2,48 +2,48 @@
 
 std::string EcpriParser::getConcatenationIndicator()
 {
-   //Todo: implement
+    // Todo: implement
     return "";
 }
 std::string EcpriParser::getMessageType()
 {
-   //Todo: implement
+    // Todo: implement
     return "";
 }
 std::string EcpriParser::getPayloadSize()
 {
-   //Todo: implement
+    // Todo: implement
     return "";
 }
 std::string EcpriParser::getProtocolVersion()
 {
-   //Todo: implement
+    // Todo: implement
     return "";
 }
 std::string EcpriParser::getSequenceId()
 {
-   //Todo: implement
+    // Todo: implement
     return "";
 }
 std::string EcpriParser::getRtcId()
 {
-   //Todo: implement
+    // Todo: implement
     return "";
 }
-// eCRPIFrame *EcpriParser::getParsedFrame()
-// {
-//     eCRPIFrame *ecrpiFrame = new eCRPIFrame();
-//     ecrpiFrame->setCRC(this->getCRC());
-//     ecrpiFrame->setConcatenationIndicator(this->getConcatenationIndicator());
-//     ecrpiFrame->setDestinationAddress(this->getDestinationAddress());
-//     ecrpiFrame->setMessageType(this->getMessageType());
-//     ecrpiFrame->setPayloadSize(this->getPayloadSize());
-//     ecrpiFrame->setProtocolVersion(this->getProtocolVersion());
-//     ecrpiFrame->setRtcId(this->getRtcId());
-//     ecrpiFrame->setSequenceId(this->getSequenceId());
-//     ecrpiFrame->setSourceAddress(this->getSourceAddress());
-//     ecrpiFrame->setType(this->getType());
-//     ecrpiFrame->setRawPacket(this->rawPacket);
+ecpriPacket *EcpriParser::getParsedPacket()
+{
+    ecpriPacket *ecrpiPacket = new ecpriPacket();
+    ecrpiPacket->setCrc(this->getCRC());
+    ecrpiPacket->setConcatenationIndicator(this->getConcatenationIndicator());
+    ecrpiPacket->setDstAddr(this->getDestinationAddress());
+    ecrpiPacket->setMsgType(this->getMessageType());
+    ecrpiPacket->setPayloadSize(this->getPayloadSize());
+    ecrpiPacket->setProtocolVer(this->getProtocolVersion());
+    ecrpiPacket->setRtcId(this->getRtcId());
+    ecrpiPacket->setSeqId(this->getSequenceId());
+    ecrpiPacket->setSrcAddr(this->getSourceAddress());
+    ecrpiPacket->setType(this->getType());
+    ecrpiPacket->setRawPacket(this->rawPacket);
 
-//     return ecrpiFrame;
-// }
+    return ecrpiPacket;
+}

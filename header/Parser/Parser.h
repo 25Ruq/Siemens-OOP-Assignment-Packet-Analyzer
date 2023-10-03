@@ -2,7 +2,7 @@
 #define PARSER_H
 
 #include <string>
-
+#include "../Packet/Packet.h"
 class Parser
 {
 protected:
@@ -16,7 +16,7 @@ public:
     static std::string getType(std::string);
     std::string getData();
     void setRawPacket(std::string rawPacket);
-    // virtual Frame *getParsedFrame() = 0;
+    virtual Packet *getParsedPacket() = 0;
 };
 
 #endif
