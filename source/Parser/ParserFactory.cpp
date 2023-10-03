@@ -7,11 +7,11 @@ Parser *ParserFactory::getParser(std::string packetType)
 {
     if (packetType == ethernetFrameType)
     {
-        // return new EthernetParser();
+        return new EthernetParser();
     }
     else if (packetType == ecpriFrameType)
     {
-        // return new EcpriParser();
+        return new EcpriParser();
     }
     return nullptr;
 }
