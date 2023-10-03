@@ -1,6 +1,8 @@
-#pragma once
+#ifndef PACKET_H
+#define PACKET_H
+
 #include <string>
-#include "../../header/fileVisitor/Visitor.h"
+#include "../fileVisitor/visitor.h"
 
 class Packet
 {
@@ -12,15 +14,16 @@ private:
     std::string type;
 
 public:
-    void setPacketLine(const std::string &packetLine);
-    void setSrcAddr(const std::string &srcAddr);
-    void setDstAddr(const std::string &dstAddr);
-    void setType(const std::string &type);
-    void setCrc(const std::string &crc);
-    std::string getPacketLine() const;
-    std::string getSrcAddr() const;
-    std::string getDstAddr() const;
-    std::string getType() const;
-    std::string getCrc() const;
-    virtual void accept(Visitor* fileWriteVisitor, int packetNumber) = 0;
+    void setPacketLine(std::string packetLine);
+    void setSrcAddr(std::string srcAddr);
+    void setDstAddr(std::string dstAddr);
+    void setType(std::string type);
+    void setCrc(std::string crc);
+    std::string getPacketLine();
+    std::string getSrcAddr();
+    std::string getDstAddr();
+    std::string getType();
+    std::string getCrc();
+    virtual void accept(Visitor *fileWriteVisitor, int packetNumber) = 0;
 };
+#endif

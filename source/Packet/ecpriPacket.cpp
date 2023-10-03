@@ -1,26 +1,26 @@
 #include "../../header/Packet/ecpriPacket.h"
 
-void ecpriPacket::setProtocolVer(const std::string &protocolVer)
+void ecpriPacket::setProtocolVer(std::string protocolVer)
 {
     this->protocolVer = protocolVer;
 }
 
-void ecpriPacket::setSeqId(const std::string &seqId)
+void ecpriPacket::setSeqId(std::string seqId)
 {
     this->seqId = seqId;
 }
 
-void ecpriPacket::setRtcId(const std::string &rtcId)
+void ecpriPacket::setRtcId(std::string rtcId)
 {
     this->rtcId = rtcId;
 }
 
-void ecpriPacket::setPayloadSize(const std::string &payloadSize)
+void ecpriPacket::setPayloadSize(std::string payloadSize)
 {
     this->payloadSize = payloadSize;
 }
 
-void ecpriPacket::setMsgType(const std::string &msgType)
+void ecpriPacket::setMsgType(std::string msgType)
 {
     this->msgType = msgType;
 }
@@ -30,37 +30,37 @@ void ecpriPacket::setConcatenationIndicator(std::string concatenationIndicator)
     this->concatenationIndicator = concatenationIndicator;
 }
 
-std::string ecpriPacket::getProtocolVer() const
+std::string ecpriPacket::getProtocolVer()
 {
-    return protocolVer;
+    return this->protocolVer;
 }
 
-std::string ecpriPacket::getSeqId() const
+std::string ecpriPacket::getSeqId()
 {
-    return seqId;
+    return this->seqId;
 }
 
-std::string ecpriPacket::getRtcId() const
+std::string ecpriPacket::getRtcId()
 {
-    return rtcId;
+    return this->rtcId;
 }
 
-std::string ecpriPacket::getPayloadSize() const
+std::string ecpriPacket::getPayloadSize()
 {
-    return payloadSize;
+    return this->payloadSize;
 }
 
-std::string ecpriPacket::getMsgType() const
+std::string ecpriPacket::getMsgType()
 {
-    return msgType;
+    return this->msgType;
 }
 
-std::string ecpriPacket::getConcatenationIndicator() const
+std::string ecpriPacket::getConcatenationIndicator()
 {
-    return concatenationIndicator;
+    return this->concatenationIndicator;
 }
 
-void ecpriPacket::accept(Visitor* fileWriteVisitor, int packetNumber)
+void ecpriPacket::accept(Visitor *fileWriteVisitor, int packetNumber)
 {
     fileWriteVisitor->writePacket(this, packetNumber);
 }

@@ -1,7 +1,8 @@
-#include "Packet.h"
-#include "FileWriteVisitor.h"
-#include "ecpriPacket.h"
-#include "EthernetPacket.h"
+#include "../header/Packet/Packet.h"
+#include "../header/fileVisitor/fileWriteVisitor.h"
+#include "../header/Packet/ecpriPacket.h"
+#include "../header/Packet/EthernetPacket.h"
+#include "../header/fileVisitor/visitor.h"
 
 int main() {
 	Packet* p1 = new EthernetPacket();

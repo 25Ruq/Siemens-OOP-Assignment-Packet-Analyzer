@@ -1,8 +1,13 @@
-#pragma once
-#include "../../header/Packet/Packet.h"
+#ifndef ETHERNET_PACKET_H
+#define ETHERNET_PACKET_H
+
+#include "Packet.h"
+class Visitor; // forward declaration
 
 class EthernetPacket : public Packet
 {
 public:
-    void accept(Visitor* fileWriteVisitor, int packetNumber);
+    void accept(Visitor *fileWriteVisitor, int packetNumber);
 };
+
+#endif

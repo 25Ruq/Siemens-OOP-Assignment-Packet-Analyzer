@@ -1,5 +1,8 @@
-#pragma once
-#include "../../header/Packet/Packet.h"
+#ifndef ECPRIPACKET_H
+#define ECPRIPACKET_H
+
+#include "Packet.h"
+class Visitor; // forward declaration
 
 class ecpriPacket : public Packet
 {
@@ -12,18 +15,19 @@ private:
     std::string concatenationIndicator;
 
 public:
-    void setProtocolVer(const std::string &protocolVer);
-    void setSeqId(const std::string &seqId);
-    void setRtcId(const std::string &rtcId);
-    void setPayloadSize(const std::string &payloadSize);
-    void setMsgType(const std::string &msgType);
+    void setProtocolVer(std::string protocolVer);
+    void setSeqId(std::string seqId);
+    void setRtcId(std::string rtcId);
+    void setPayloadSize(std::string payloadSize);
+    void setMsgType(std::string msgType);
     void setConcatenationIndicator(std::string concatenationIndicator);
 
-    std::string getProtocolVer() const;
-    std::string getSeqId() const;
-    std::string getRtcId() const;
-    std::string getPayloadSize() const;
-    std::string getMsgType() const;
-    std::string getConcatenationIndicator() const;
-    void accept(Visitor* fileWriteVisitor, int packetNumber);
+    std::string getProtocolVer();
+    std::string getSeqId();
+    std::string getRtcId();
+    std::string getPayloadSize();
+    std::string getMsgType();
+    std::string getConcatenationIndicator();
+    void accept(Visitor *fileWriteVisitor, int packetNumber);
 };
+#endif

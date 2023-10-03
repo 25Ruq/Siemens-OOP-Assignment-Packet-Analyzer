@@ -1,8 +1,7 @@
-#ifndef UNTITLED_PARSER_H
-#define UNTITLED_PARSER_H
+#ifndef PARSER_H
+#define PARSER_H
 
 #include <string>
-
 
 class Parser
 {

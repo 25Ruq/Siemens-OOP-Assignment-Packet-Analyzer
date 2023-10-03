@@ -1,7 +1,9 @@
-#pragma once
-#include "../../header/fileVisitor/Visitor.h"
-#include "../../header/Packet/EthernetPacket.h"
-#include "../../header/Packet/ecpriPacket.h"
+#ifndef FILEWRITEVISITOR_H
+#define FILEWRITEVISITOR_H
+
+#include "Visitor.h"
+#include "../Packet/EthernetPacket.h"
+#include "../Packet/ecpriPacket.h"
 #include <string> 
 #include <iostream>
 
@@ -13,3 +15,4 @@ public:
 	void writePacket(ecpriPacket* ecpriPacket, int packetNumber);
 };
 
+#endif

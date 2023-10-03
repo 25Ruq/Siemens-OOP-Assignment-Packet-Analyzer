@@ -1,5 +1,6 @@
 #include "../../header/fileVisitor/FileWriteVisitor.h"
 
+
 FileWriteVisitor::FileWriteVisitor(std::string fileName)
 {
 	this->fileStream.open(fileName);
