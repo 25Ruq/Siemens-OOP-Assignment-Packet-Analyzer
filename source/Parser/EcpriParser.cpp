@@ -30,10 +30,10 @@ std::string EcpriParser::getRtcId()
     return rawPacket.substr(PacketFields::RTC_ID_START, PacketFields::RTC_ID_SIZE);
 }
 
-ecpriPacket* EcpriParser::getParsedPacket() 
+EcpriPacket* EcpriParser::getParsedPacket() 
 {
-    ecpriPacket* ecrpiPacket = new ecpriPacket();
-    ecrpiPacket->setCrc(getCRC());
+    EcpriPacket* ecrpiPacket = new EcpriPacket();
+    ecrpiPacket->setCRC(getCRC());
     ecrpiPacket->setConcatenationIndicator(getConcatenationIndicator());
     ecrpiPacket->setDestinationAddress(getDestinationAddress());
     ecrpiPacket->setMessageType(getMessageType());
