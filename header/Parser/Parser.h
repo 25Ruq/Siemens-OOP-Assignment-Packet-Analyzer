@@ -14,9 +14,9 @@ public:
     std::string getSourceAddress();
     std::string getCRC();
     std::string getType();
-    static std::string getType(std::string);
     std::string getData();
     void setRawPacket(std::string rawPacket);
+    static std::string getPacketType(std::string);
     virtual Packet *getParsedPacket() = 0;
 };
 

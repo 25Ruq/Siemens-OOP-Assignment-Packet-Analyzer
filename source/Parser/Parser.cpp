@@ -21,7 +21,7 @@ void Parser::setRawPacket(std::string rawPacket)
 {
     this->rawPacket = rawPacket;
 }
-std::string Parser::getType(std::string rawPacket)
+std::string Parser::getPacketType(std::string rawPacket)
 {
     return rawPacket.substr(PacketFields::TYPE_START, PacketFields::TYPE_SIZE);
 }

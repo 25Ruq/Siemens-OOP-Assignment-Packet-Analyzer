@@ -1,6 +1,6 @@
 #include "../../header/Parser/EthernetParser.h"
 
-EthernetPacket *EthernetParser::getParsedPacket()
+EthernetPacket *EthernetParser::getParsedPacket()  
 {
     EthernetPacket *ethernetPacket = new EthernetPacket();
 

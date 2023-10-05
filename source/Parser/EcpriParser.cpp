@@ -24,7 +24,7 @@ std::string EcpriParser::getRtcId()
 {
     return this->rawPacket.substr(PacketFields::RTC_ID_START, PacketFields::RTC_ID_SIZE);
 }
-ecpriPacket *EcpriParser::getParsedPacket()
+ecpriPacket *EcpriParser::getParsedPacket() 
 {
     ecpriPacket *ecrpiPacket = new ecpriPacket();
     ecrpiPacket->setCrc(this->getCRC());

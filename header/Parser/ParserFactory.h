@@ -8,8 +8,8 @@
 class ParserFactory
 {
 private:
-    static std::string ethernetFrameType;
-    static std::string ecpriFrameType;
+    static std::string ethernetPacketType;
+    static std::string ecpriPacketType;
 
 public:
     static Parser *getParser(std::string packetType);
