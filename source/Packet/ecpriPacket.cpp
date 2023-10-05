@@ -32,12 +32,12 @@ void EcpriPacket::setConcatenationIndicator(std::string concatenationIndicator)
 
 std::string EcpriPacket::getProtocolVersion()
 {
-    return protocolVer;
+    return protocolVersion;
 }
 
 std::string EcpriPacket::getSequenceId()
 {
-    return seqId;
+    return sequenceId;
 }
 
 std::string EcpriPacket::getRtcId()
@@ -52,7 +52,7 @@ std::string EcpriPacket::getPayloadSize()
 
 std::string EcpriPacket::getMessageType()
 {
-    return msgType;
+    return messageType;
 }
 
 std::string EcpriPacket::getConcatenationIndicator()
