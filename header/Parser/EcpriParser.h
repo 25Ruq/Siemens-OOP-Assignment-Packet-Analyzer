@@ -15,6 +15,6 @@ private:
     std::string getRtcId();
 
 public:
-    ecpriPacket* getParsedPacket() override;
+    EcpriPacket* getParsedPacket() override;
 };
 #endif
