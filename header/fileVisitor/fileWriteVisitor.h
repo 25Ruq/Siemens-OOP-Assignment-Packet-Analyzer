@@ -11,8 +11,8 @@ class FileWriteVisitor : public Visitor
 {
 public:
 	FileWriteVisitor(std::string fileName);
-	void writePacket(EthernetPacket* ethpacket, int packetNumber);
-	void writePacket(ecpriPacket* ecpriPacket, int packetNumber);
+	void writePacket(EthernetPacket* ethpacket);
+	void writePacket(ecpriPacket* ecpriPacket);
 };
 
 #endif

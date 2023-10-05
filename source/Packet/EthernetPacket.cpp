@@ -1,6 +1,6 @@
 #include "../../header/Packet/EthernetPacket.h"
 
-void EthernetPacket::accept(Visitor* fileWriteVisitor, int packetNumber)
+void EthernetPacket::accept(Visitor* fileWriteVisitor)
 {
-	fileWriteVisitor->writePacket(this, packetNumber);
+	fileWriteVisitor->writePacket(this);
 }

@@ -24,6 +24,6 @@ public:
     std::string getType();
     std::string getCrc();
     std::string getRawPacket();
-    virtual void accept(Visitor *fileWriteVisitor, int packetNumber) = 0;
+    virtual void accept(Visitor *fileWriteVisitor) = 0;
 };
 #endif

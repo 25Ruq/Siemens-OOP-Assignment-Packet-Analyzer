@@ -6,9 +6,8 @@ FileWriteVisitor::FileWriteVisitor(std::string fileName)
 	this->fileStream.open(fileName);
 	//closing in the drive code
 }
-void FileWriteVisitor::writePacket(EthernetPacket* ethpacket, int packetNumber)
+void FileWriteVisitor::writePacket(EthernetPacket* ethpacket)
 {
-	fileStream << "packet # " << std::to_string(packetNumber) << ":\n";
 	fileStream << ethpacket->getRawPacket() << "\n";
 	fileStream << "CRC: " << ethpacket->getCrc() << "\n";
 	fileStream << "Destination Address: " << ethpacket->getDstAddr() << "\n";
@@ -17,9 +16,8 @@ void FileWriteVisitor::writePacket(EthernetPacket* ethpacket, int packetNumber)
 	fileStream << std::string(150, '*') << "\n";
 }
 
-void FileWriteVisitor::writePacket(ecpriPacket* ecpripacket, int packetNumber)
+void FileWriteVisitor::writePacket(ecpriPacket* ecpripacket)
 {
-	fileStream << "packet # " << std::to_string(packetNumber) << ":\n";
 	fileStream << ecpripacket->getRawPacket() << "\n";
 	fileStream << "CRC: " << ecpripacket->getCrc() << "\n";
 	fileStream << "Concatenation Indicator: " << ecpripacket->getConcatenationIndicator() << "\n";

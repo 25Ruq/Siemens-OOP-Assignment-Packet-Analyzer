@@ -12,7 +12,7 @@ class Visitor
 {
 public:
 	std::ofstream fileStream;
-	virtual void writePacket(EthernetPacket* ethpacket, int packetNumber) = 0;
-	virtual void writePacket(ecpriPacket* ecpriPacket, int packetNumber) = 0;
+	virtual void writePacket(EthernetPacket* ethpacket) = 0;
+	virtual void writePacket(ecpriPacket* ecpriPacket) = 0;
 };
 #endif

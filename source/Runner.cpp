@@ -32,8 +32,10 @@ void Runner::writeParsedPackets(std::string fileName)
     Visitor *visitor = new FileWriteVisitor(fileName);
     for (int i = 0; i < parsedPackets.size(); ++i)
     {
-        parsedPackets[i]->accept(visitor, i);
+        visitor->fileStream << "packet # " << std::to_string(i) << ":\n";
+        parsedPackets[i]->accept(visitor);
     }
+    visitor->fileStream.close();
 }
 
 Runner::~Runner()

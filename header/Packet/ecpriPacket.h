@@ -28,6 +28,6 @@ public:
     std::string getPayloadSize();
     std::string getMsgType();
     std::string getConcatenationIndicator();
-    void accept(Visitor *fileWriteVisitor, int packetNumber);
+    void accept(Visitor *fileWriteVisitor);
 };
 #endif

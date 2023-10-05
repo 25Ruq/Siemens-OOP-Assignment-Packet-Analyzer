@@ -60,7 +60,7 @@ std::string ecpriPacket::getConcatenationIndicator()
     return this->concatenationIndicator;
 }
 
-void ecpriPacket::accept(Visitor *fileWriteVisitor, int packetNumber)
+void ecpriPacket::accept(Visitor *fileWriteVisitor)
 {
-    fileWriteVisitor->writePacket(this, packetNumber);
+    fileWriteVisitor->writePacket(this);
 }

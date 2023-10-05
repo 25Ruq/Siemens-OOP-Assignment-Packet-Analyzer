@@ -7,7 +7,7 @@ class Visitor; // forward declaration
 class EthernetPacket : public Packet
 {
 public:
-    void accept(Visitor *fileWriteVisitor, int packetNumber);
+    void accept(Visitor *fileWriteVisitor);
 };
 
 #endif
