@@ -4,9 +4,9 @@ EthernetPacket* EthernetParser::getParsedPacket()
 {
     EthernetPacket* ethernetPacket = new EthernetPacket();
 
-    ethernetPacket->setCrc(getCRC());
-    ethernetPacket->setDstAddr(getDestinationAddress());
-    ethernetPacket->setSrcAddr(getSourceAddress());
+    ethernetPacket->setCRC(getCRC());
+    ethernetPacket->setDestinationAddress(getDestinationAddress());
+    ethernetPacket->setSourceAddress(getSourceAddress());
     ethernetPacket->setType(getType());
     ethernetPacket->setRawPacket(rawPacket);
     return ethernetPacket;
