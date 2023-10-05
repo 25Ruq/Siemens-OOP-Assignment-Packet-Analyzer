@@ -1,14 +1,14 @@
 #include "../../header/Packet/Packet.h"
 
 
-void Packet::setSrcAddr(std::string srcAddr)
+void Packet::setSourceAddress(std::string sourceAddress)
 {
-    this->srcAddr = srcAddr;
+    this->sourceAddress = sourceAddress;
 }
 
-void Packet::setDstAddr(std::string dstAddr)
+void Packet::setDestinationAddress(std::string destinationAddress)
 {
-    this->dstAddr = dstAddr;
+    this->destinationAddress = destinationAddress;
 }
 
 void Packet::setType(std::string type)
@@ -16,7 +16,7 @@ void Packet::setType(std::string type)
     this->type = type;
 }
 
-void Packet::setCrc(std::string crc)
+void Packet::setCRC(std::string crc)
 {
     this->crc = crc;
 }
@@ -25,15 +25,14 @@ void Packet::setRawPacket(std::string rawPacket)
     this->rawPacket = rawPacket;
 }
 
-
-std::string Packet::getSrcAddr()
+std::string Packet::getSourceAddress()
 {
-    return srcAddr;
+    return sourceAddress;
 }
 
-std::string Packet::getDstAddr()
+std::string Packet::getDestinationAddress()
 {
-    return dstAddr;
+    return destinationAddress;
 }
 
 std::string Packet::getType()
@@ -41,7 +40,7 @@ std::string Packet::getType()
     return type;
 }
 
-std::string Packet::getCrc()
+std::string Packet::getCRC()
 {
     return crc;
 }

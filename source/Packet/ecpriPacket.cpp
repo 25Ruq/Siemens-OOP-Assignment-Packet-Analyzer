@@ -1,13 +1,13 @@
-#include "../../header/Packet/ecpriPacket.h"
+#include "../../header/Packet/EcpriPacket.h"
 
-void ecpriPacket::setProtocolVer(std::string protocolVer)
+void ecpriPacket::setProtocolVersion(std::string protocolVersion)
 {
-    this->protocolVer = protocolVer;
+    this->protocolVersion = protocolVersion;
 }
 
-void ecpriPacket::setSeqId(std::string seqId)
+void ecpriPacket::setSequenceId(std::string sequenceId)
 {
-    this->seqId = seqId;
+    this->sequenceId = sequenceId;
 }
 
 void ecpriPacket::setRtcId(std::string rtcId)
@@ -20,9 +20,9 @@ void ecpriPacket::setPayloadSize(std::string payloadSize)
     this->payloadSize = payloadSize;
 }
 
-void ecpriPacket::setMsgType(std::string msgType)
+void ecpriPacket::setMessageType(std::string messageType)
 {
-    this->msgType = msgType;
+    this->messageType = messageType;
 }
 
 void ecpriPacket::setConcatenationIndicator(std::string concatenationIndicator)
@@ -30,37 +30,37 @@ void ecpriPacket::setConcatenationIndicator(std::string concatenationIndicator)
     this->concatenationIndicator = concatenationIndicator;
 }
 
-std::string ecpriPacket::getProtocolVer()
+std::string ecpriPacket::getProtocolVersion()
 {
-    return this->protocolVer;
+    return protocolVer;
 }
 
-std::string ecpriPacket::getSeqId()
+std::string ecpriPacket::getSequenceId()
 {
-    return this->seqId;
+    return seqId;
 }
 
 std::string ecpriPacket::getRtcId()
 {
-    return this->rtcId;
+    return rtcId;
 }
 
 std::string ecpriPacket::getPayloadSize()
 {
-    return this->payloadSize;
+    return payloadSize;
 }
 
-std::string ecpriPacket::getMsgType()
+std::string ecpriPacket::getMessageType()
 {
-    return this->msgType;
+    return msgType;
 }
 
 std::string ecpriPacket::getConcatenationIndicator()
 {
-    return this->concatenationIndicator;
+    return concatenationIndicator;
 }
 
-void ecpriPacket::accept(Visitor *fileWriteVisitor)
+void ecpriPacket::accept(Visitor* fileWriteVisitor)
 {
     fileWriteVisitor->writePacket(this);
 }

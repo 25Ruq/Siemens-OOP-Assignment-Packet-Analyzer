@@ -7,15 +7,15 @@
 #include <vector>
 
 #include "./Parser/ParserFactory.h"
-// #include "./Parser/Parser.h"
 #include "./Packet/Packet.h"
 #include "../header/fileVisitor/visitor.h"
 #include "../header/fileVisitor/fileWriteVisitor.h"
+
 class Runner
 {
 private:
     std::vector<std::string> rawPackets;
-    std::vector<Packet *> parsedPackets;
+    std::vector<Packet*> parsedPackets;
 
 public:
     void readPackets(std::string);

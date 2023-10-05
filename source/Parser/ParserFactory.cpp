@@ -3,7 +3,7 @@
 std::string ParserFactory::ethernetPacketType = "88F7";
 std::string ParserFactory::ecpriPacketType = "AEFE";
 
-Parser *ParserFactory::getParser(std::string packetType)
+Parser* ParserFactory::getParser(std::string packetType)
 {
     if (packetType == ethernetPacketType)
     {

@@ -7,23 +7,23 @@
 class Packet
 {
 private:
-    std::string dstAddr;
-    std::string srcAddr;
+    std::string destinationAddress;
+    std::string sourceAddress;
     std::string crc;
     std::string type;
     std::string rawPacket;
 
 public:
-    void setSrcAddr(std::string srcAddr);
-    void setDstAddr(std::string dstAddr);
+    void setSourceAddress(std::string sourceAddress);
+    void setDestinationAddress(std::string destinationAddress);
     void setType(std::string type);
-    void setCrc(std::string crc);
+    void setCRC(std::string crc);
     void setRawPacket(std::string rawPacket);
-    std::string getSrcAddr();
-    std::string getDstAddr();
+    std::string getSourceAddress();
+    std::string getDestinationAddress();
     std::string getType();
-    std::string getCrc();
+    std::string getCRC();
     std::string getRawPacket();
-    virtual void accept(Visitor *fileWriteVisitor) = 0;
+    virtual void accept(Visitor*) = 0;
 };
 #endif

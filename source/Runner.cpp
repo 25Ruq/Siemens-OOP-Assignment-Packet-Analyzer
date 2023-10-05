@@ -9,33 +9,36 @@ void Runner::readPackets(std::string filename)
     {
         rawPackets.push_back(line);
     }
+    fileToRead.close();
 }
 void Runner::parsePackets()
 {
     for (int i = 0; i < rawPackets.size(); ++i)
     {
         std::string packetType = Parser::getPacketType(rawPackets[i]);
-        Parser *unknownParser = ParserFactory::getParser(packetType);
+        Parser* unknownParser = ParserFactory::getParser(packetType);
         if (unknownParser == nullptr)
         {
             std::cout << "Unknown packet type" << std::endl;
             continue;
         }
         unknownParser->setRawPacket(rawPackets[i]);
-        Packet *parsedPacket = unknownParser->getParsedPacket();
+        Packet* parsedPacket = unknownParser->getParsedPacket();
         parsedPackets.push_back(parsedPacket);
         delete unknownParser;
     }
 }
 void Runner::writeParsedPackets(std::string fileName)
 {
-    Visitor *visitor = new FileWriteVisitor(fileName);
+    Visitor* visitor = new FileWriteVisitor(fileName);
     for (int i = 0; i < parsedPackets.size(); ++i)
     {
         visitor->fileStream << "packet # " << std::to_string(i) << ":\n";
         parsedPackets[i]->accept(visitor);
+        fileStream << std::string(150, '*') << "\n";
     }
     visitor->fileStream.close();
+    delete visitor;
 }
 
 Runner::~Runner()

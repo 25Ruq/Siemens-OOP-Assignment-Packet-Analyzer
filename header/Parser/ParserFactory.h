@@ -12,6 +12,6 @@ private:
     static std::string ecpriPacketType;
 
 public:
-    static Parser *getParser(std::string packetType);
+    static Parser* getParser(std::string packetType);
 };
 #endif

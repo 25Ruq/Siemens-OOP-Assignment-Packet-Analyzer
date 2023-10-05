@@ -1,13 +1,13 @@
 #include "../../header/Parser/EthernetParser.h"
 
-EthernetPacket *EthernetParser::getParsedPacket()  
+EthernetPacket* EthernetParser::getParsedPacket()  
 {
-    EthernetPacket *ethernetPacket = new EthernetPacket();
+    EthernetPacket* ethernetPacket = new EthernetPacket();
 
-    ethernetPacket->setCrc(this->getCRC());
-    ethernetPacket->setDstAddr(this->getDestinationAddress());
-    ethernetPacket->setSrcAddr(this->getSourceAddress());
-    ethernetPacket->setType(this->getType());
-    ethernetPacket->setRawPacket(this->rawPacket);
+    ethernetPacket->setCrc(getCRC());
+    ethernetPacket->setDstAddr(getDestinationAddress());
+    ethernetPacket->setSrcAddr(getSourceAddress());
+    ethernetPacket->setType(getType());
+    ethernetPacket->setRawPacket(rawPacket);
     return ethernetPacket;
 }

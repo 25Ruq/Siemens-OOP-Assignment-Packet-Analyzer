@@ -3,16 +3,16 @@
 
 #include "Visitor.h"
 #include "../Packet/EthernetPacket.h"
-#include "../Packet/ecpriPacket.h"
+#include "../Packet/EcpriPacket.h"
 #include <string> 
 #include <iostream>
 
 class FileWriteVisitor : public Visitor
 {
 public:
-	FileWriteVisitor(std::string fileName);
-	void writePacket(EthernetPacket* ethpacket);
-	void writePacket(ecpriPacket* ecpriPacket);
+	FileWriteVisitor(std::string);
+	void writePacket(EthernetPacket*);
+	void writePacket(EcpriPacket*);
 };
 
 #endif

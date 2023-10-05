@@ -4,12 +4,11 @@
 
 #include "Parser.h"
 #include "../Packet/EthernetPacket.h"
-#include <string>
 
 class EthernetParser : public Parser
 {
 public:
-    EthernetPacket *getParsedPacket() override;
+    EthernetPacket* getParsedPacket() override;
 };
 
 

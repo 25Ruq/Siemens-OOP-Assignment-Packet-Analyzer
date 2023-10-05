@@ -2,17 +2,16 @@
 #define VISITOR_H
 
 #include <fstream>
-// #include "../Packet/EthernetPacket.h"
-// #include "../Packet/ecpriPacket.h"
 
+// forward declaration
 class EthernetPacket;
-class ecpriPacket;
+class EcpriPacket;
 
 class Visitor
 {
 public:
 	std::ofstream fileStream;
-	virtual void writePacket(EthernetPacket* ethpacket) = 0;
-	virtual void writePacket(ecpriPacket* ecpriPacket) = 0;
+	virtual void writePacket(EthernetPacket*) = 0;
+	virtual void writePacket(EcpriPacket*) = 0;
 };
 #endif
