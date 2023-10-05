@@ -35,13 +35,13 @@ ecpriPacket* EcpriParser::getParsedPacket()
     ecpriPacket* ecrpiPacket = new ecpriPacket();
     ecrpiPacket->setCrc(getCRC());
     ecrpiPacket->setConcatenationIndicator(getConcatenationIndicator());
-    ecrpiPacket->setDstAddr(getDestinationAddress());
-    ecrpiPacket->setMsgType(getMessageType());
+    ecrpiPacket->setDestinationAddress(getDestinationAddress());
+    ecrpiPacket->setMessageType(getMessageType());
     ecrpiPacket->setPayloadSize(getPayloadSize());
-    ecrpiPacket->setProtocolVer(getProtocolVersion());
+    ecrpiPacket->setProtocolVersion(getProtocolVersion());
     ecrpiPacket->setRtcId(getRtcId());
-    ecrpiPacket->setSeqId(getSequenceId());
-    ecrpiPacket->setSrcAddr(getSourceAddress());
+    ecrpiPacket->setSequenceId(getSequenceId());
+    ecrpiPacket->setSourceAddress(getSourceAddress());
     ecrpiPacket->setType(getType());
     ecrpiPacket->setRawPacket(rawPacket);
 
