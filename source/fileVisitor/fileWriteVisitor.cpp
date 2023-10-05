@@ -15,7 +15,7 @@ void FileWriteVisitor::writePacket(EthernetPacket* ethpacket)
 	fileStream << "Type: " << ethpacket->getType() << "\n";
 }
 
-void FileWriteVisitor::writePacket(ecpriPacket* ecpripacket)
+void FileWriteVisitor::writePacket(EcpriPacket* ecpripacket)
 {
 	fileStream << ecpripacket->getRawPacket() << "\n";
 	fileStream << "CRC: " << ecpripacket->getCrc() << "\n";
