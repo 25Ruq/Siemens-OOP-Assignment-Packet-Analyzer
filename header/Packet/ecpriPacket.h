@@ -16,7 +16,7 @@ private:
 
 public:
     void setProtocolVersion(std::string protocolVersion);
-    void setSeqId(std::string sequenceId);
+    void setSequenceId(std::string sequenceId);
     void setRtcId(std::string rtcId);
     void setPayloadSize(std::string payloadSize);
     void setMessageType(std::string messageType);
