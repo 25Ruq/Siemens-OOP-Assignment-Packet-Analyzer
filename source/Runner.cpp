@@ -35,7 +35,7 @@ void Runner::writeParsedPackets(std::string fileName)
     {
         visitor->fileStream << "packet # " << std::to_string(i) << ":\n";
         parsedPackets[i]->accept(visitor);
-        fileStream << std::string(150, '*') << "\n";
+        visitor->fileStream << std::string(150, '*') << "\n";
     }
     visitor->fileStream.close();
     delete visitor;
